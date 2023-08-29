@@ -1,0 +1,18 @@
+# OMFL example
+
+[common]
+name = "Common config"
+description = "Some config"
+version = 1
+
+[servers]
+
+[servers.first]
+enabled = true
+ip = "127.0.0.1"
+ports = [ 100505, 10506 ]
+
+[servers.second]
+enabled = true
+ip = "127.0.0.1"
+ports = [ 10005, 1006 ]

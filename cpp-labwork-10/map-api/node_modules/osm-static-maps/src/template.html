@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html style="height:100%;width:100%;margin:0;padding:0">
+    <head>
+        <style>
+        //leafletcss//
+        .leaflet-fade-anim, .leaflet-zoom-anim {
+            transition: none;
+        }
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            background: lightblue;
+            height: 100%;
+            width: 100%;
+        }
+        </style>
+        <script>
+        //leafletjs//
+        {{#if arrows}}
+        //leafletpolylinedecorator//
+        {{/if}}
+        </script>
+
+        {{#if vectorserverUrl}}
+            <style>
+            //mapboxcss//
+            </style>
+            <script>
+            //mapboxjs//
+            //leafletmapboxjs//
+            </script>
+        {{/if}}
+
+    </head>
+    <body>
+        <div id="map"></div>
+        <script>
+
+            {{#if arrows}}
+                var decorator = L.Symbol.arrowHead({
+                    pixelSize: 6,
+                    polygon: false,
+                    pathOptions: {
+                        color: '#FFF',
+                        opacity: 1,
+                        weight: 2,
+                    }
+                })
+            {{/if}}
+
+            var maxZoom = Number({{maxZoom}});
+            var initialPoint = L.latLng(-34.921779, -57.9524339);
+
+            var map = new L.Map('map', {
+                zoomControl: false,
+                center: initialPoint,
+                zoom: maxZoom,
+                maxZoom: maxZoom
+            });
+            map.attributionControl.setPrefix('').addAttribution('{{ attribution }}');
+
+            {{#if scale}}
+                L.control.scale({{{scale}}}).addTo(map);
+            {{/if}}
+
+            {{#if geojson }}
+                {{#if markerIconOptions}}
+                    var myIcon = L.icon({{{markerIconOptions}}});
+                {{else}}
+                    var myIcon = L.icon({
+                        iconUrl: "data:image/png;base64,//markericonpng//",
+                        iconSize: [25, 41],
+                        iconAnchor: [15, 41]
+                    });
+                {{/if}}
+                var geojsonlayer = L.geoJson({{{ geojson }}}, {
+                    pointToLayer: function (feature, latlng) {
+                        if (feature.markerIconOptions) {
+                            return L.marker(latlng, {icon: L.icon(feature.markerIconOptions)})
+                        }
+                        return L.marker(latlng, {icon: myIcon});
+                    },
+                    onEachFeature: function (feature, layer) {
+                        {{#if arrows}}
+                            if (feature.type == 'LineString' || (feature.geometry && feature.geometry.type == 'LineString')) {
+                                L.polylineDecorator(L.polyline(layer._latlngs), {patterns: [
+                                    {offset: 5, repeat: 150, symbol: decorator},
+                                    {offset: 12, repeat: 150, symbol: decorator},
+                                    {offset: 19, repeat: 150, symbol: decorator},
+                                ]}).addTo(map);
+                            }
+                        {{/if}}
+                    },
+                    style: function(feature) {
+                        var style = {}
+                        {{#if arrows}}
+                            Object.assign(style, { weight: 10 })
+                        {{/if}}
+                        {{#if style}}
+                            Object.assign(style, {{{ style }}})
+                        {{/if}}
+                        if (feature.geometry.pathOptions) {
+                            Object.assign(style, feature.geometry.pathOptions)
+                        }
+                        return style
+                    },
+                });
+                geojsonlayer.addTo(map);
+                map.fitBounds(geojsonlayer.getBounds(), {maxZoom: maxZoom});
+            {{/if}}
+
+            {{#if center}}
+                map.panTo(L.latLng('{{ center }}'.split(',')[1], '{{ center }}'.split(',')[0]), {animate: false});
+            {{else}}
+                {{#if geojson}}
+                {{else}}
+                    map.panTo(initialPoint, {animate: false});
+                {{/if}}
+            {{/if}}
+
+            {{#if zoom}}
+                map.setZoom({{ zoom }}, {animate: false});
+            {{else}}
+                {{#if geojson }}
+                {{else}}
+                    map.setZoom(maxZoom, {animate: false})
+                {{/if}}
+            {{/if}}
+
+            {{#if vectorserverUrl}}
+                L.mapboxGL({
+                    accessToken: '{{ vectorserverToken }}',
+                    style: '{{{ vectorserverUrl }}}'
+                }).addTo(map);
+            {{else}}
+                {{#if tileserverUrl}}
+                    L.tileLayer(
+                        '{{{tileserverUrl}}}',
+                        {
+                            maxZoom: maxZoom,
+                            fadeAnimation: false
+                        }
+                    ).addTo(map);
+                {{/if}}
+            {{/if}}
+
+
+        </script>
+    </body>
+</html>
+
