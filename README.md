@@ -1,7 +1,7 @@
 # Taking a C++ course in University
 
 > **Disclosure:**
-> I'm doing this to learn and make content for my portfolio. The code in here will probably be messy, and I will slowly but surely rewrite most of it. So make sure to read the readme's in the sub-folders to keep up with any changes.
+> I'm doing this to learn and make content for my portfolio. The code in here will probably be messy, and I will slowly but surely rewrite most of it. So make sure to read the readme's in the sub-folders to keep up with any changes. Also, I'm keeping the labworks as I submitted them to my teachers / mentors, and then worked on changes to make them better, so make sure to see the commit history and read the readme's. 
 
 # Prelogue
 
