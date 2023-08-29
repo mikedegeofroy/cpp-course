@@ -1,0 +1,1 @@
+add_library(query_language query_language.h query_language.cpp)

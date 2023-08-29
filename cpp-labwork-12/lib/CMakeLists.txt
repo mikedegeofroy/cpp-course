@@ -1,0 +1,5 @@
+add_library(database database.h database.cpp)
+add_subdirectory(tokenizer)
+add_subdirectory(functions)
+add_subdirectory(components)
+add_subdirectory(parser)
