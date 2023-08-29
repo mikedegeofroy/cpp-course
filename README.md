@@ -34,4 +34,6 @@ Anyways, before university I spent most of my time being a script kitty. I used 
   I wanted to add a map of the city you're looking at, I thought that would be exactly the overkill idea that would be perfect for a high grade. 
 
 3) Good Structure
-  I sucked at file structure and OOP at this point, so I wanted to make a project, that would have a smart structure so I can support it later, also to make a good impression. 
+  I sucked at file structure and OOP at this point, so I wanted to make a project, that would have a smart structure so I can support it later, also to make a good impression.
+
+![](/content/labwork-12-showcase.gif)
