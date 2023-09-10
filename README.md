@@ -13,13 +13,34 @@ It's safe to say, that at this point I was quite familiar with the unix environe
 
 # Labwork 1
 
-I was quite confident, this was more of a "getting up to speed" labwork, and we had 2 weeks for it, so I went all in. 
-
 ## Assignment 
+
+Make a "word coutner" utility for text files. This cli utility should support the following commands:
+
+-l, --lines outputs only the number of lines
+-c, --bytes outputs the size of the file in bytes
+-w, --words outputs the count of words
+-m, --chars outputs the number of characters
 
 ## Result
 
 Here's the [result](/cpp-labwork-1).
+
+## Comments
+
+I'm pretty sure that this cli doesn't work exactly properly, mostly because of me not really understanding how ascii is encoded and what the hell is my pointer doing in the stream.
+
+# Labwork 2
+
+## Assignment
+
+Create a uint32_t (unsigned int 32) type. This type has to support implicit conversions from string, sums, substractions, multiplications, output to console, !=, == operators and division. 
+
+## Result
+
+## Comments 
+
+I have to review the way I wrote this labwork, I remember being very tight on time and not really understanding what they wanted for me, it was also around that time that I started to understand how types worked and what implicit and explicit casting was. 
 
 # Labwork 10
 
