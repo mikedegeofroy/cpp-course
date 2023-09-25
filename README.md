@@ -22,13 +22,19 @@ Make a "word coutner" utility for text files. This cli utility should support th
 -w, --words outputs the count of words
 -m, --chars outputs the number of characters
 
+This is my first ever labwork, and it's fairly straight and simple, I knew really nothing about c++ programming other than the syntax, but this would become a core stepping stone for me falling in love with C++. Now I love C++ for being very basic, blazing fast and me having complete control on how to handle garbage collection and data allocation. But I knew nothing back then, so naive. Anways, I gave it my best, even making a nice readme.md file for the project with animations and everything. 
+
+In fact, the code is okay at best, but I'm trying to find time to review it and make it better, so if you ever use this code base as an example you don't end up making the same mistakes as I did.
+
 ## Result
 
 Here's the [result](/cpp-labwork-1).
 
+![](https://s4.gifyu.com/images/demoecd70c91f2089499.gif)
+
 ## Comments
 
-I'm pretty sure that this cli doesn't work exactly properly, mostly because of me not really understanding how ascii is encoded and what the hell is my pointer doing in the stream.
+I'm pretty sure that this cli doesn't work exactly in the most efficient way, mostly because of my (then) partial understanding how ascii is encoded and what the hell is my pointer doing in the stream.
 
 # Labwork 2
 
