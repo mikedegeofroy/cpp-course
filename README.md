@@ -30,7 +30,7 @@ In fact, the code is okay at best, but I'm trying to find time to review it and 
 
 Here's the [result](/cpp-labwork-1).
 
-![](https://s4.gifyu.com/images/demoecd70c91f2089499.gif)
+<img loop=infinite style="-webkit-user-select: none; display: block; margin: auto; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); cursor: zoom-in;" src="https://camo.githubusercontent.com/c20d9e94cf19a52636a5a9822a58869c83b009b936f84145a145ec487586614c/68747470733a2f2f73342e67696679752e636f6d2f696d616765732f64656d6f656364373063393166323038393439392e676966">
 
 ## Comments
 
