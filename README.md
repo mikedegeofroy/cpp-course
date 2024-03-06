@@ -13,13 +13,40 @@ It's safe to say, that at this point I was quite familiar with the unix environe
 
 # Labwork 1
 
-I was quite confident, this was more of a "getting up to speed" labwork, and we had 2 weeks for it, so I went all in. 
-
 ## Assignment 
+
+Make a "word coutner" utility for text files. This cli utility should support the following commands:
+
+-l, --lines outputs only the number of lines
+-c, --bytes outputs the size of the file in bytes
+-w, --words outputs the count of words
+-m, --chars outputs the number of characters
+
+This is my first ever labwork, and it's fairly straight and simple, I knew really nothing about c++ programming other than the syntax, but this would become a core stepping stone for me falling in love with C++. Now I love C++ for being very basic, blazing fast and me having complete control on how to handle garbage collection and data allocation. But I knew nothing back then, so naive. Anways, I gave it my best, even making a nice readme.md file for the project with animations and everything. 
+
+In fact, the code is okay at best, but I'm trying to find time to review it and make it better, so if you ever use this code base as an example you don't end up making the same mistakes as I did.
 
 ## Result
 
 Here's the [result](/cpp-labwork-1).
+
+<img loop=infinite style="-webkit-user-select: none; display: block; margin: auto; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); cursor: zoom-in;" src="https://camo.githubusercontent.com/c20d9e94cf19a52636a5a9822a58869c83b009b936f84145a145ec487586614c/68747470733a2f2f73342e67696679752e636f6d2f696d616765732f64656d6f656364373063393166323038393439392e676966">
+
+## Comments
+
+I'm pretty sure that this cli doesn't work exactly in the most efficient way, mostly because of my (then) partial understanding how ascii is encoded and what the hell is my pointer doing in the stream.
+
+# Labwork 2
+
+## Assignment
+
+Create a uint32_t (unsigned int 32) type. This type has to support implicit conversions from string, sums, substractions, multiplications, output to console, !=, == operators and division. 
+
+## Result
+
+## Comments 
+
+I have to review the way I wrote this labwork, I remember being very tight on time and not really understanding what they wanted for me, it was also around that time that I started to understand how types worked and what implicit and explicit casting was. 
 
 # Labwork 10
 

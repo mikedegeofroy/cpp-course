@@ -62,7 +62,7 @@ class BufferIterator {
   }
 
   BufferIterator& operator-=(const int& index) {
-    buffer_ptr_ += index;
+    buffer_ptr_ -= index;
     return *(this);
   }
 
